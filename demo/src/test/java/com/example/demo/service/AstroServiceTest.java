@@ -28,4 +28,14 @@ public class AstroServiceTest {
                 () -> assertEquals(response.people().size(), response.number())
         );
     }
+
+    @Test
+    void getAstroResponseAsync() {
+        var response = service.getAstroResponseAsync();
+        assertAll(
+                () -> assertEquals("success", response.message()),
+                () ->assertTrue(response.number() >= 0),
+                () -> assertEquals(response.people().size(), response.number())
+        );
+    }
 }
