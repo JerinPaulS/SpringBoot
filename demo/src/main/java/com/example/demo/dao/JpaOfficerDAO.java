@@ -44,7 +44,7 @@ public class JpaOfficerDAO implements OfficerDAO{
 
     @Override
     public boolean existsById(Integer id) {
-        Long count = entityManager.createQuery("SELECT COUNT(o.id) FROM Officer o", Long.class)
+        Long count = entityManager.createQuery("SELECT COUNT(o.id) FROM Officer o WHERE o.id=:id", Long.class)
                 .setParameter("id", id)
                 .getSingleResult();
         return count > 0;
