@@ -8,18 +8,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.List;
 import java.util.Optional;
 
+import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 @Transactional
-public class JdbcOfficerDAOTest {
+public class JpaOfficerDAOTest {
 
     @Autowired
-    private JdbcOfficerDAO dao;
+    private JpaOfficerDAO dao;
 
     @Autowired
     private JdbcTemplate template;

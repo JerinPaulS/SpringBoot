@@ -41,9 +41,9 @@ public class JdbcOfficerDAO implements OfficerDAO {
         SqlParameterSource parameters = new BeanPropertySqlParameterSource(officer);
         Number newId = insertOfficer.executeAndReturnKey(parameters);
         return new Officer(newId.intValue(),
-                officer.rank(),
-                officer.firstName(),
-                officer.lastName());
+                officer.getRank(),
+                officer.getFirstName(),
+                officer.getLastName());
     }
 
     @Override
@@ -70,7 +70,7 @@ public class JdbcOfficerDAO implements OfficerDAO {
 
     @Override
     public void delete(Officer officer) {
-        jdbcTemplate.update("DELETE FROM officers WHERE id=?", officer.id());
+        jdbcTemplate.update("DELETE FROM officers WHERE id=?", officer.getId());
     }
 
     @Override
